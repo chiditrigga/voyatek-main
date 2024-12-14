@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: #F0F2F5;
+    transform: none !important;
+    zoom: 1 !important;
+  }
+
+ .icon{
+  color:#667185
+ }
+
+
+
