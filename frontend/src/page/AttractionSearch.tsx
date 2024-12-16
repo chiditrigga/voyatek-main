@@ -44,7 +44,7 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
 
   const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
-  const isButtonDisabled = !location || !departureDate || !arrivalDate;
+  const isButtonDisabled = !location || !departureDate || !arrivalDate || loading
 
   const handleAttractionClick = (attraction: Attraction) => {
     const savedAttractions = localStorage.getItem("savedAttractions")
