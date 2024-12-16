@@ -136,7 +136,7 @@ const HotelCard: React.FC<
 										</div>
 									</div>
 
-									<div className='flex ms-2 text-sm justify-between bottom-0 font-medium text-[#0D6EFD] mt-3'>
+									<div className='flex ms-2 text-sm justify-between bottom-0 font-medium text-[#0D6EFD] mt-5'>
 										<div className='flex gap-x-2'>
 											<a
 												href='#'
