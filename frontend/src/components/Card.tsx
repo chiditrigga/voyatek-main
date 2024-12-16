@@ -13,7 +13,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description, buttonLabel, onButtonClick, bgColor, textColor,btcolor,btext }) => {
   return (
-    <div className={`px-3 py-4 rounded-md ${bgColor} ${textColor} md:w-fit w-full lg:w-72 shadow-md`}>
+    <div className={`px-3 py-4 rounded-md ${bgColor} ${textColor} md:w-fit w-full lg:w-72`}>
       <h3 className="text-base font-semibold mb-2">{title}</h3>
       <p className="mb-4 font-normal text-sm">{description}</p>
       <button

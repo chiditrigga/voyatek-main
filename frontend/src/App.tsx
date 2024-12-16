@@ -44,6 +44,39 @@ const App: React.FC = () => {
     toggleRefresh();
   };
 
+  const cards = [
+	{
+	  title: 'Activities',
+	  description: 'Build, personalize, and optimize your itineraries with our trip planner.',
+	  buttonLabel: 'Add Activities',
+	  onButtonClick: openAttractionModal,
+	  bgColor: 'bg-[#000031]',
+	  textColor: 'text-white',
+	  btcolor: 'bg-[#0D6EFD]',
+	  btext: 'text-white',
+	},
+	{
+	  title: 'Hotels',
+	  description: 'Build, personalize, and optimize your itineraries with our trip planner.',
+	  buttonLabel: 'Add Hotels',
+	  onButtonClick: openHotelModal,
+	  bgColor: 'bg-[#E7F0FF]',
+	  textColor: 'text-black',
+	  btcolor: 'bg-[#0D6EFD]',
+	  btext: 'text-white',
+	},
+	{
+	  title: 'Flights',
+	  description: 'Build, personalize, and optimize your itineraries with our trip planner.',
+	  buttonLabel: 'Add Flights',
+	  onButtonClick: openFlightModal,
+	  bgColor: 'bg-[#0D6EFD]',
+	  textColor: 'text-white',
+	  btcolor: 'bg-white',
+	  btext: 'text-[#0D6EFD]',
+	},
+  ];
+
   return (
 		<>
 			<ToastContainer />
@@ -123,38 +156,21 @@ const App: React.FC = () => {
 							</div>
 						</div>
 
-						<div className='flex flex-col md:flex-row md:space-x-2 gap-y-4 md:mb-20 my-7'>
-							<Card
-								title='Activities'
-								description='Build, personalize, and optimize your itineraries with our trip planner.'
-								buttonLabel='Add Activities'
-								onButtonClick={openAttractionModal}
-								bgColor='bg-[#000031]'
-								textColor='text-white'
-								btcolor='bg-[#0D6EFD]'
-								btext='text-white'
-							/>
-							<Card
-								title='Hotels'
-								description='Build, personalize, and optimize your itineraries with our trip planner.'
-								buttonLabel='Add Hotels'
-								onButtonClick={openHotelModal}
-								bgColor='bg-[#E7F0FF]'
-								textColor='text-black'
-								btcolor='bg-[#0D6EFD]'
-								btext='text-white'
-							/>
-							<Card
-								title='Flights'
-								description='Build, personalize, and optimize your itineraries with our trip planner.'
-								buttonLabel='Add Flights'
-								onButtonClick={openFlightModal}
-								bgColor='bg-[#0D6EFD]'
-								textColor='text-white'
-								btcolor='bg-white'
-								btext='text-[#0D6EFD]'
-							/>
-						</div>
+						<div className='flex flex-col md:flex-row md:space-x-1 gap-y-4 md:mb-20 my-7'>
+    {cards.map((card, index) => (
+      <Card
+        key={index}
+        title={card.title}
+        description={card.description}
+        buttonLabel={card.buttonLabel}
+        onButtonClick={card.onButtonClick}
+        bgColor={card.bgColor}
+        textColor={card.textColor}
+        btcolor={card.btcolor}
+        btext={card.btext}
+      />
+    ))}
+  </div>
 
 						{isFlightModalOpen && <FlightSearch onClose={closeFlightModal} />}
 						{isHotelModalOpen && <HotelSearch onClose={closeHotelModal} />}
