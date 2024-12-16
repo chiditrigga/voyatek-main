@@ -124,16 +124,16 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ onClose }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <div
         ref={modalRef}
-        className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl h-[95vh] mx-4 overflow-hidden"
+        className="bg-white p-5 rounded-lg shadow-xl w-full max-w-4xl  md:w-[45rem] h-[80vh] mx-4 overflow-hidden"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h2 className="text-xl font-semibold mb-6 text-center text-gray-800">
           Flight Search
         </h2>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 mb-4">
           <InputField
             type="text"
-            label="Departure From"
+            label="From"
             value={fromLocation}
             onChange={(e) => setFromLocation(e.target.value)}
             placeholder="e.g. London, Paris"
@@ -172,7 +172,7 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ onClose }) => {
           <p className="text-red-500 text-center">{error}</p>
         ) : airlines.length > 0 ? (
           <div className="mt-1 h-96 overflow-y-auto">
-            <h3 className="text-xl font-semibold mb-2">Available Flights</h3>
+            <h3 className="text-lg font-semibold mb-2">Available Flights</h3>
             <div className="space-y-4">
               {airlines.map((airline) => (
                 <div
@@ -194,7 +194,7 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ onClose }) => {
             </div>
           </div>
         ) : (
-          <p className="text-gray-500 text-center">No airlines available.</p>
+          <p className="text-gray-500 text-start mt-2">No airlines available.</p>
         )}
       </div>
     </div>

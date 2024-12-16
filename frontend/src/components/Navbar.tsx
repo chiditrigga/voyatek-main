@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
 				</div>
 
 				{/* Links for larger screens */}
-				<div className='hidden lg:flex text-xs  font-medium text-greyText lg:space-x-3 xl:space-x-7 items-center'>
+				<div className='hidden lg:flex text-xs   font-medium text-greyText lg:space-x-3 xl:space-x-5 items-center'>
 					<a href='#' className='items-center group hover:text-[#1D2433]'>
 						<GoHome
 							size={24}

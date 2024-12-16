@@ -129,16 +129,16 @@ const HotelSearch: React.FC<HotelSearchProps> = ({ onClose }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <div
         ref={modalRef}
-        className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl h-[95vh] mx-4 overflow-hidden"
+        className="bg-white p-5 rounded-lg shadow-xl w-full max-w-4xl md:w-[45rem] h-[80vh] mx-4 overflow-hidden"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h2 className="text-xl font-semibold mb-6 text-center text-gray-800">
           Hotel Search
         </h2>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row gap-4  mb-4">
           <InputField
             type="text"
-            label="Hotel Location"
+            label="Location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             onBlur={() => fetchDestId(location)}
@@ -147,7 +147,7 @@ const HotelSearch: React.FC<HotelSearchProps> = ({ onClose }) => {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+        <div className="flex flex-col sm:flex-row gap-4 mb-2">
           <InputField
             type="date"
             label="Check-in Date"
@@ -182,9 +182,7 @@ const HotelSearch: React.FC<HotelSearchProps> = ({ onClose }) => {
           <p className="text-red-500 text-center">{error}</p>
         ) : (
           <div className="mt-4 h-96 overflow-y-auto">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Available Hotels
-            </h3>
+           
             <div className="space-y-4">
               {hotels.length > 0 ? (
                 hotels.map((hotel, index) => (

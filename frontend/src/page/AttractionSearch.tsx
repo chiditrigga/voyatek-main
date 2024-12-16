@@ -128,15 +128,15 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <div
         ref={modalRef}
-        className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl h-[95vh] mx-4 overflow-hidden"
+        className="bg-white p-5 rounded-lg shadow-xl w-full max-w-4xl md:w-[45rem] h-[80vh] mx-4 overflow-hidden"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
-          Activitie Search
+        <h2 className="text-xl font-semibold mb-3 mt-1 text-center text-gray-800">
+          Activity Search
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
           <InputField
-            label="Activity Location"
+            label="Location"
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -145,15 +145,15 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 mb-3">
           <InputField
-            label="Activity Start Date"
+            label="Start Date"
             type="date"
             value={arrivalDate}
             onChange={(e) => setArrivalDate(e.target.value)}
           />
           <InputField
-            label="Activity End Date"
+            label="End Date"
             type="date"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
@@ -175,9 +175,7 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
           <p className="text-red-500 text-center">{error}</p>
         ) : (
           <div className="mt-4 h-96 overflow-y-auto">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">
-              Available Attractions
-            </h3>
+          
             <div className="space-y-4">
               {Attractions.length > 0 ? (
                 Attractions.map((attraction, index) => (

@@ -46,7 +46,7 @@ const FlightCard: React.FC<
 				{savedFlights.length > 0 ? (
 					<button
 						onClick={onButtonClick}
-						className='text-[#0D6EFD] bg-white px-4 py-2 rounded font-medium text-sm hover:bg-[#3e77cc] '>
+						className='text-[#0D6EFD] bg-white px-4 py-2 rounded font-medium text-sm hover:bg-[#d8dce2] '>
 						Add Flights
 					</button>
 				) : (
