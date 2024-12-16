@@ -4,7 +4,7 @@ import { PiAirplaneTilt, PiBuildings, PiCaretUpDown, PiFirstAidKit, PiNewspaperC
 
 const Sidebar: React.FC = () => {
   return (
-		<div className='hidden text-xs xl:flex flex-col fixed top-24 left-0 h-[83vh]  w-64 ms-7 bg-white p-5'>
+		<div className='hidden text-xs xl:flex flex-col fixed top-24 left-0 h-[84.5vh]  w-64 ms-7 bg-white p-5'>
 			<nav className='flex flex-col space-y-6 text-greyText text-sm px-3 py-5'>
 				<div className='flex items-center space-x-4 cursor-pointer group hover:text-[#1D2433]'>
 					<PiRoadHorizonLight
