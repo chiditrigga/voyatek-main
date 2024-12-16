@@ -177,7 +177,7 @@ const Navbar: React.FC = () => {
 							Create
 						</a>
 						<div className='flex items-center space-x-1  hover:text-[#1D2433] cursor-pointer'>
-						<button className='w-full bg-[#0D6EFD]  text-white px-4 py-2 rounded-lg hover:bg-blue-600'>
+						<button className='w-fit bg-[#0D6EFD]  text-white px-4 py-2 rounded-lg hover:bg-blue-600'>
 							Subscribe
 						</button>
 						</div>
