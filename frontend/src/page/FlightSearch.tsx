@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { ImSpinner2 } from "react-icons/im";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import InputField from "../components/InputField";
+import Button from "../components/Button";
 
 interface FlightSearchProps {
   onClose: () => void;
@@ -60,6 +62,7 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ onClose }) => {
   const handleSearch = async () => {
     const fetchedFromId = await fetchLocationId(fromLocation);
     const fetchedToId = await fetchLocationId(toLocation);
+    console.log(fromLocation, toLocation, departDate);
 
     if (!fetchedFromId || !fetchedToId) {
       console.error(
@@ -110,7 +113,6 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ onClose }) => {
     localStorage.setItem("savedFlights", JSON.stringify(savedFlights));
 
     toast.success("flight added!");
-    console.log("Newly saved Flights:", savedFlights);
   };
 
   useEffect(() => {
@@ -124,47 +126,43 @@ const FlightSearch: React.FC<FlightSearchProps> = ({ onClose }) => {
         ref={modalRef}
         className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl h-[95vh] mx-4 overflow-hidden"
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-800">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
           Flight Search
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
-          <input
-            required
+          <InputField
             type="text"
-            placeholder="From Location"
+            label="Departure From"
             value={fromLocation}
             onChange={(e) => setFromLocation(e.target.value)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            placeholder="e.g. London, Paris"
+            className="w-full"
           />
-
-          <input
-            required
+          <InputField
             type="text"
-            placeholder="To Location"
+            label="Destination"
             value={toLocation}
             onChange={(e) => setToLocation(e.target.value)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            placeholder="e.g. New York, Tokyo"
+            className="w-full"
           />
         </div>
 
-        <input
-          required
+        <InputField
           type="date"
+          label="Travel Date"
           value={departDate}
           onChange={(e) => setDepartDate(e.target.value)}
-          className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+          className="w-full mb-4"
         />
 
-        <button
-          disabled={isButtonDisabled}
+        <Button
           onClick={handleSearch}
-          className={` bg-blue-600 ${
-            isButtonDisabled ? " opacity-50 cursor-not-allowed" : ""
-          } text-white px-4 py-3 rounded-lg w-full mt-2 mb-4 hover:bg-blue-700 transition font-semibold`}
-        >
-          Search Flights
-        </button>
+          disabled={isButtonDisabled}
+          label="Search Flights"
+          className="w-full"
+        />
 
         {loading ? (
           <div className="flex justify-center items-center my-8">

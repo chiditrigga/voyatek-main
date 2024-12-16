@@ -3,6 +3,8 @@ import { FaMapMarkerAlt, FaRegClock, FaStar } from "react-icons/fa";
 import { ImSpinner2 } from "react-icons/im";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import InputField from "../components/InputField";
+import Button from "../components/Button";
 
 interface AttractionSearchProps {
   onClose: () => void;
@@ -82,6 +84,7 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
   };
 
   const handleSearch = async () => {
+    console.log(location, arrivalDate, departureDate);
     if (!destId || !arrivalDate || !departureDate) {
       setError("Please provide all required information.");
       return;
@@ -127,45 +130,42 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
         ref={modalRef}
         className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl h-[95vh] mx-4 overflow-hidden"
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-800">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
           Activitie Search
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
-          <input
+          <InputField
+            label="Activity Location"
             type="text"
-            placeholder="Location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             onBlur={() => fetchDestId(location)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            placeholder="Enter a city (e.g. Lagos, Abuja)"
           />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
-          <input
+          <InputField
+            label="Activity Start Date"
             type="date"
             value={arrivalDate}
             onChange={(e) => setArrivalDate(e.target.value)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
-          <input
+          <InputField
+            label="Activity End Date"
             type="date"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
           />
         </div>
 
-        <button
-          disabled={isButtonDisabled}
+        <Button
+          label="Search Activities"
           onClick={handleSearch}
-          className={` bg-blue-600 ${
-            isButtonDisabled ? " opacity-50 cursor-not-allowed" : ""
-          } text-white px-4 py-3 rounded-lg w-full mt-2 mb-4 hover:bg-blue-700 transition font-semibold`}
-        >
-          Search Activities
-        </button>
+          disabled={isButtonDisabled}
+          className="w-full mt-2 mb-4"
+        />
 
         {loading ? (
           <div className="flex justify-center items-center my-8">

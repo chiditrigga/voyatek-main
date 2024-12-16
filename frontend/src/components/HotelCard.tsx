@@ -58,12 +58,12 @@ const HotelCard: React.FC<
 			{savedHotels.length > 0 ? (
 				savedHotels.map((hotel, index) => (
 					<div className='md:flex gap-0 mb-4' key={index}>
-						<div className='w-full p-4 border rounded-l-md shadow-sm bg-gray-50'>
-							<div className='flex flex-col  sm:flex-row'>
+						<div className='w-full p-4 border rounded-l-sm shadow-sm bg-gray-50'>
+							<div className='md:flex md:flex-row'>
 								<img
 									src={hotel.property.photoUrls[0]}
 									alt={hotel.name || 'Hotel'}
-									className='md:w-56  rounded-md object-cover mb-4 md:mb-0'
+									className='md:max-w-56 w-full  rounded-md object-cover mb-4 md:mb-0'
 								/>
 								<div className='flex-1 '>
 									<div className='flex ms-2 justify-between items-center'>
@@ -159,7 +159,7 @@ const HotelCard: React.FC<
 							</div>
 						</div>
 
-						<div className='w-full md:w-10 bg-[#FBEAE9] flex justify-center items-center rounded-r-md'>
+						<div className='w-full md:w-10 bg-[#FBEAE9] py-2 md:py-0 rounded-b md:rounded-b-none flex justify-center items-center rounded-r-sm'>
 							<IoMdClose className='w-6 h-6 cursor-pointer text-[#9E0A05] hover:text-[#FF5733]' />
 						</div>
 					</div>

@@ -172,7 +172,7 @@ const FlightCard: React.FC<
 								</div>
 							</div>
 						</div>
-						<div className='w-full md:w-10 bg-[#FBEAE9] flex justify-center items-center rounded-r-md'>
+						<div className='w-full md:w-10 bg-[#FBEAE9] py-2 md:py-0 rounded-b md:rounded-b-none flex justify-center items-center rounded-r-md'>
 							<IoMdClose className='w-6 h-6 cursor-pointer text-[#9E0A05] hover:text-[#FF5733]' />
 						</div>
 					</div>

@@ -51,7 +51,7 @@ const App: React.FC = () => {
 			<div className='flex'>
 				<Sidebar />
 
-				<div className=' bg-[#F0F2F5]  flex-1  lg:p-4 xl:p-6 xl:ml-72 px-2 mt-[5rem] lg:mt-[4rem] xl:mt-14 w-screen md:mx-3 my-5'>
+				<div className=' bg-[#F0F2F5]  flex-1  lg:p-4 xl:p-6 xl:ml-72 px-2 mt-[4.7rem] lg:mt-[4rem] xl:mt-[4.5rem] w-screen md:mx-3 my-5'>
 					<div className='bg-white md:p-3 p-2 lg:p-3'>
 						<div className='relative w-full mb-5 flex flex-col'>
 							<div className='relative'>
@@ -78,7 +78,7 @@ const App: React.FC = () => {
 									<span>21 April 2024</span>
 								</div>
 
-								<div className='text-[#000000] py-2 font-semibold text-xl md:text-2xl'>
+								<div className='text-[#000000] pt-1 font-semibold text-xl md:text-2xl'>
 									Bahamas Family Trip <br />
 									<span className='md:text-base text-sm font-medium text-[#676E7E]'>
 										New York, United States of America{' '}

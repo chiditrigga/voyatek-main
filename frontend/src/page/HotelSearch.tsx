@@ -3,6 +3,8 @@ import { FaMapMarkerAlt, FaRegClock, FaStar } from "react-icons/fa";
 import { ImSpinner2 } from "react-icons/im";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import InputField from "../components/InputField";
+import Button from "../components/Button";
 
 interface HotelSearchProps {
   onClose: () => void;
@@ -81,7 +83,6 @@ const HotelSearch: React.FC<HotelSearchProps> = ({ onClose }) => {
     }
   };
 
-
   const handleSearch = async () => {
     if (!destId || !arrivalDate || !departureDate) {
       console.error("Please provide all required information.");
@@ -130,50 +131,48 @@ const HotelSearch: React.FC<HotelSearchProps> = ({ onClose }) => {
         ref={modalRef}
         className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl h-[95vh] mx-4 overflow-hidden"
       >
-        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-800">
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
           Hotel Search
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
-          <input
-            required
+          <InputField
             type="text"
-            placeholder="Location"
+            label="Hotel Location"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             onBlur={() => fetchDestId(location)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            placeholder="Enter location (e.g. London, Paris)"
+            className="w-full"
           />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-4">
-          <input
-            required
+          <InputField
             type="date"
-            placeholder="Arrival Date"
+            label="Check-in Date"
+            placeholder="Select your check-in date"
             value={arrivalDate}
             onChange={(e) => setArrivalDate(e.target.value)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full mb-4"
           />
-          <input
-            required
+
+          <InputField
             type="date"
+            label="Check-out Date"
             placeholder="Departure Date"
             value={departureDate}
             onChange={(e) => setDepartureDate(e.target.value)}
-            className="border p-3 w-full rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full mb-4"
           />
         </div>
 
-        <button
-          disabled={isButtonDisabled}
+        <Button
           onClick={handleSearch}
-          className={` bg-blue-600 ${
-            isButtonDisabled ? " opacity-50 cursor-not-allowed" : ""
-          } text-white px-4 py-3 rounded-lg w-full mt-2 mb-4 hover:bg-blue-700 transition font-semibold`}
-        >
-          Search Hotels
-        </button>
+          disabled={isButtonDisabled}
+          label="Search Hotels"
+          className="w-full"
+        />
 
         {loading ? (
           <div className="flex justify-center items-center my-8">
