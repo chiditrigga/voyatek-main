@@ -52,11 +52,11 @@ const App: React.FC = () => {
 				<Sidebar />
 
 				<div className=' bg-[#F0F2F5]  flex-1  lg:p-4 xl:p-6 xl:ml-72 px-2 mt-[4.7rem] lg:mt-[4rem] xl:mt-[4.5rem] w-screen md:mx-3 my-5'>
-					<div className='bg-white md:p-3 p-2 lg:p-3'>
+					<div className='bg-white md:p-3 p-2 lg:p-5'>
 						<div className='relative w-full mb-5 flex flex-col'>
 							<div className='relative'>
 								<img src={Banner} className='w-full' alt='banner' />
-								<div className='z-20 bg-[#FFFFFF33] cursor-pointer rounded w-fit p-2 md:-mt-[5.5rem] ml-3 lg:-mt-[8rem] xl:-mt-[8.5rem] self-start relative -mt-[3rem] group'>
+								<div className='z-20 bg-[#FFFFFF33] cursor-pointer rounded w-fit p-2 md:-mt-[5.5rem] ml-3 lg:-mt-[8rem] xl:-mt-[8rem] self-start relative -mt-[3rem] group'>
 									<FaArrowLeft className='text-[#344054] cursor-pointer group-hover:text-[#1D2433] hover:text-[#1D2433]' />
 									
 								</div>

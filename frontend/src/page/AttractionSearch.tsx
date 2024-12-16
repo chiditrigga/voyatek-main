@@ -84,7 +84,7 @@ const AttractionSearch: React.FC<AttractionSearchProps> = ({ onClose }) => {
   };
 
   const handleSearch = async () => {
-    console.log(location, arrivalDate, departureDate);
+    console.log(destId, arrivalDate, departureDate);
     if (!destId || !arrivalDate || !departureDate) {
       setError("Please provide all required information.");
       return;
